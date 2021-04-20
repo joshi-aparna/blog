@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: "Aparna's personal space",
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Aparna Ravindra`,
+      summary: "who will use to space as her journal for things she wants to remember",
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog `,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      github: `joshi-aparna`,
     },
   },
   plugins: [
