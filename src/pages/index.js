@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
         <Seo title="All posts" />
         <Bio />
         <p>
-         Lookout for this space....
+         Lookout for this space.... I am working on something...
         </p>
       </Layout>
     )

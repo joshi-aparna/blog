@@ -3,7 +3,7 @@ module.exports = {
     title: "Aparna's personal space",
     author: {
       name: `Aparna Ravindra`,
-      summary: "who will use to space as her journal for things she wants to remember",
+      summary: "who will use to space as her journal for things she wants to remember.",
     },
     description: `A blog `,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/src/pages`,
         name: `blog`,
       },
     },
@@ -118,7 +118,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile-pic.JPG`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
