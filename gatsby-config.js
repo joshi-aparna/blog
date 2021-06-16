@@ -7,7 +7,7 @@ module.exports = {
       summary: "who will use to space as her journal for things she wants to remember.",
     },
     description: `A blog `,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://joshi-aparna.github.io/blog/`,
     social: {
       github: `joshi-aparna`,
     },
