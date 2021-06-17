@@ -1,10 +1,17 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
+ */
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+import React from "react"
+
+import { GlobalState } from "./src/components/GlobalState/GlobalState.js"
+
+export const wrapRootElement = ({ element }) => {
+    return (
+        <GlobalState>
+            {element}
+        </GlobalState>
+    )
+}

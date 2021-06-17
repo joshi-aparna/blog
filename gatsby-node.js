@@ -1,115 +1,213 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash");
+const path = require("path");
+const Promise = require("bluebird");
+const fs = require('fs');
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`src/templates/blog-post.js`)
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode });
+    const fileNode = getNode(node.parent);
+    const source = fileNode.sourceInstanceName;
+    const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
+    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
 
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
-        ) {
-          nodes {
-            id
-            fields {
-              slug
+    if (source !== "parts") {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+      });
+    }
+    createNodeField({
+      node,
+      name: `prefix`,
+      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+    });
+    createNodeField({
+      node,
+      name: `source`,
+      value: source
+    });
+  }
+};
+
+function createPaginationJSON(pathSuffix, pagePosts) {
+  const dir = "public/paginationJson/"
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+  const filePath = dir+"index"+pathSuffix+".json";
+  const dataToSave = JSON.stringify(pagePosts);
+  fs.writeFile(filePath, dataToSave, function(err) {
+    if(err) {
+      return console.log(err);
+    }
+  }); 
+}
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  return new Promise((resolve, reject) => {
+    const postTemplate = path.resolve("./src/templates/PostTemplate.js");
+    const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
+    const tagTemplate = path.resolve("./src/templates/TagTemplate.js");
+    
+    const activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
+    console.log(`Using environment config: '${activeEnv}'`)
+
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark(
+              filter: { fields: { slug: { ne: null } } }
+              sort: { fields: [fields___prefix, fields___slug] order: DESC }
+            ) {
+                edges {
+                  node {
+                      id
+                      excerpt
+                      fields {
+                          slug
+                          prefix
+                          source
+                      }
+                      frontmatter {
+                          title
+                          tags
+                          cover {
+                              children {
+                                  ... on ImageSharp {
+                                      fluid(maxWidth: 800, maxHeight: 360, cropFocus: CENTER, quality: 90, traceSVG: { color: "#f9ebd2" }) {
+                                          tracedSVG
+                                          aspectRatio
+                                          src
+                                          srcSet
+                                          srcWebp
+                                          srcSetWebp
+                                          sizes
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
             }
           }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
         }
-      }
-    `
-  )
 
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    )
-    return
-  }
+        var items = result.data.allMarkdownRemark.edges;
 
-  const posts = result.data.allMarkdownRemark.nodes
+        // Don't leak drafts into production.
+        if (activeEnv == "production") {
+          items = items.filter(item => 
+            item.node.fields.prefix &&
+            !(item.node.fields.prefix+"").startsWith("draft")
+          )
+        }
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+        // Create tags list
+        const tagSet = new Set();
+        items.forEach(edge => {
+          const {
+            node: {
+              frontmatter: { tags }
+            }
+          } = edge;
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+          if (tags && tags != null) {
+            tags.forEach(tag => {
+              if (tag && tag !== null) {
+                tagSet.add(tag);
+              }
+            })
+          }
+        });
 
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
+        // Create tag pages
+        const tagList = Array.from(tagSet);
+        tagList.forEach(tag => {
+          createPage({
+            path: `/tag/${_.kebabCase(tag)}/`,
+            component: tagTemplate,
+            context: {
+              tag
+            }
+          });
+        });
+
+        // Create posts
+        const posts = items.filter(item => item.node.fields.source === "posts");
+        posts.forEach(({ node }, index) => {
+          const slug = node.fields.slug;
+          const prev = index === 0 ? undefined : posts[index - 1].node;
+          const next = index === posts.length - 1 ? undefined : posts[index + 1].node;
+          const source = node.fields.source;
+
+          createPage({
+            path: slug,
+            component: postTemplate,
+            context: {
+              slug,
+              next,
+              prev,
+              source
+            }
+          });
+        });
+
+        // and pages.
+        const pages = items.filter(item => item.node.fields.source === "pages");
+        pages.forEach(({ node }) => {
+          const slug = node.fields.slug;
+          const source = node.fields.source;
+
+          createPage({
+            path: slug,
+            component: pageTemplate,
+            context: {
+              slug,
+              source
+            }
+          });
+        });
+
+        // Create "paginated homepage" == pages which list blog posts.
+        // And at the same time, create corresponding JSON for infinite scroll.
+        // Users who have JS enabled will see infinite scroll instead of pagination.
+        const postsPerPage = 3;
+        const numPages = Math.ceil(posts.length / postsPerPage);
+
+        _.times(numPages, i => {
+          const pathSuffix = (i>0 ? i+1 : "");
+
+          // Get posts for this page
+          const startInclusive = i * postsPerPage;
+          const endExclusive = startInclusive + postsPerPage;
+          const pagePosts = posts.slice(startInclusive, endExclusive)
+    
+          createPaginationJSON(pathSuffix, pagePosts);
+          createPage({
+            path: `/`+pathSuffix,
+            component: path.resolve("./src/templates/index.js"),
+            context: {
+              numPages,
+              currentPage: i + 1,
+              initialPosts: pagePosts
+            }
+          });
+        });
       })
-    })
-  }
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-
-  // Explicitly define the siteMetadata {} object
-  // This way those will always be defined even if removed from gatsby-config.js
-
-  // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
-  createTypes(`
-    type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: Social
-    }
-
-    type Author {
-      name: String
-      summary: String
-    }
-
-    type Social {
-      twitter: String
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
-    }
-
-    type Fields {
-      slug: String
-    }
-  `)
-}
+    );
+  });
+};

@@ -1,29 +1,20 @@
-import * as React from "react"
-import { graphql } from "gatsby"
+import PropTypes from "prop-types";
+import React from "react";
+import theme from "../theme/theme.yaml";
+import Article from "../components/Article";
+import Headline from "../components/Article/Headline";
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const NotFoundPage = props => {
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="404: Not Found" />
-      <h1>404: Not Found</h1>
+    <Article theme={theme}>
+      <header>
+        <Headline title="404" theme={theme} />
+      </header>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
-  )
-}
+    </Article>
+  );
+};
 
-export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export default NotFoundPage;
