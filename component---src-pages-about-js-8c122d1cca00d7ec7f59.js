@@ -1,2 +1,0 @@
-(self.webpackChunkjoshi_aparna_blog=self.webpackChunkjoshi_aparna_blog||[]).push([[682],{5518:function(e,t,a){"use strict";a.r(t);var o=a(7294),n=a(7198),r=a(3751);t.default=function(e){e.data;var t=e.location;return o.createElement(n.Z,{location:t,title:"About"},o.createElement(r.Z,{title:"About"}),o.createElement("p",null,"This is one of my side projects as an attempt to learn Markdown, Gatsby and GraphQL. I promise to come back and update this page to share about me better."))}}}]);
-//# sourceMappingURL=component---src-pages-about-js-8c122d1cca00d7ec7f59.js.map
