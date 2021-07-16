@@ -1,106 +1,91 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { kebabCase } from 'lodash'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import DefaultLayout from '../components/layout'
+import SEO from '../components/seo'
 
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+import 'katex/dist/katex.min.css'
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
-  )
+class BlogPostTemplate extends React.Component {
+  render() {
+    const post = this.props.data.markdownRemark
+
+    return (
+      <DefaultLayout>
+        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <div className="clearfix post-content-box">
+          <article className="article-page">
+            <div className="page-content">
+              {post.frontmatter.img && (
+                <div className="page-cover-image">
+                  <figure>
+                    <GatsbyImage
+                      image={
+                        post.frontmatter.img.childImageSharp.gatsbyImageData
+                      }
+                      className="page-image"
+                      key={
+                        post.frontmatter.img.childImageSharp.gatsbyImageData.src
+                      }
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              )}
+              <div className="wrap-content">
+                <header className="header-page">
+                  <h1 className="page-title">{post.frontmatter.title}</h1>
+                  <div className="page-date">
+                    <span>{post.frontmatter.date}</span>
+                  </div>
+                </header>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <div className="page-footer">
+                  <div className="page-tag">
+                    {post.frontmatter.tags &&
+                      post.frontmatter.tags.map((tag) => (
+                        <span key={tag}>
+                          <Link className="tag" to={`/tags/${kebabCase(tag)}/`}>
+                            # {tag}
+                          </Link>
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </DefaultLayout>
+    )
+  }
 }
 
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
+        author
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
-    }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
-      frontmatter {
-        title
+        date(formatString: "YYYY, MMM DD")
+        tags
+        img {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: [AUTO, AVIF, WEBP])
+          }
+        }
       }
     }
   }
