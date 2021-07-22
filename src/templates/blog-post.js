@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import DefaultLayout from '../components/layout'
+import MemoryCard from '../components/MemoryCard/memorycard'
 import SEO from '../components/seo'
 
 import 'katex/dist/katex.min.css'
@@ -42,6 +43,7 @@ class BlogPostTemplate extends React.Component {
                   </div>
                 </header>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <MemoryCard/>
                 <div className="page-footer">
                   <div className="page-tag">
                     {post.frontmatter.tags &&

@@ -90,3 +90,21 @@
     }
   }
 }
+
+.card {
+  height: 12.7rem;
+	width: 12.7rem;
+	margin: 0.2rem 0.2rem;
+  font-size: 33px;
+  margin: 0.2rem 0.2rem;
+	background: #141214;;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  position: relative;
+  flex-direction: inherit;
+}
