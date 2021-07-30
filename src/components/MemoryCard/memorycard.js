@@ -15,7 +15,7 @@ class MemoryCard extends React.Component {
   
     handleClick() {
       this.setState(prevState => ({
-        index : prevState.isToggleOn ? (prevState.index + 1 >= this.cardTitles.length ) ? 0 : prevState.index + 1  : prevState.index,
+        index : !prevState.isToggleOn ? (prevState.index + 1 >= this.cardTitles.length ) ? 0 : prevState.index + 1  : prevState.index,
         isToggleOn: !prevState.isToggleOn
       }));
     }
@@ -23,6 +23,7 @@ class MemoryCard extends React.Component {
     render() {
       return (
         <div className="wrapper">
+            <h3>{this.cardTitles[this.state.index]}</h3>
             <div className="card" id="memorycard"  onClick={this.handleClick}>
             {this.state.isToggleOn ? '' : this.data[this.cardTitles[this.state.index]]}
             </div>
