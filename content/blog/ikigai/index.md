@@ -5,6 +5,7 @@ description: # Add post description (optional)
 img: ./ikigai.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Book, Non-Fiction] # add tag
+memorydata: ./test.json
 ---
 
 This is my first attempt at capturing the essence of a book. This is not a review. I am no expert. These days I have been reading non-fiction. Too many "self help" books, if you know what I mean. I figured there is no point in reading that many books if I do not stop and reflect on them. This is also an attempt to analyse if and how a book (and its teachings) are applicable to my life. This is in no way a reflection on the book itself. 

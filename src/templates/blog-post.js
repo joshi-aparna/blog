@@ -43,7 +43,9 @@ class BlogPostTemplate extends React.Component {
                   </div>
                 </header>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                <MemoryCard/>
+                {post.frontmatter.memorydata && (
+                  <MemoryCard content={post.frontmatter.memorydata.internal}/>
+                )}
                 <div className="page-footer">
                   <div className="page-tag">
                     {post.frontmatter.tags &&
@@ -83,6 +85,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY, MMM DD")
         tags
+        memorydata {
+          internal {
+            content
+          }
+        }
         img {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: [AUTO, AVIF, WEBP])
