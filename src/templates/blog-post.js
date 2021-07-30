@@ -4,6 +4,8 @@ import { kebabCase } from 'lodash'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 import DefaultLayout from '../components/layout'
+import MemoryCard from '../components/MemoryCard/memorycard'
+import PracticeCard from '../components/PracticeCard/practicecard'
 import SEO from '../components/seo'
 
 import 'katex/dist/katex.min.css'
@@ -42,6 +44,13 @@ class BlogPostTemplate extends React.Component {
                   </div>
                 </header>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <br/>
+                {post.frontmatter.memorydata && (
+                  <MemoryCard content={post.frontmatter.memorydata.internal}/>
+                )}
+                {post.frontmatter.practicedata && (
+                  <PracticeCard content={post.frontmatter.practicedata.internal}/>
+                )}
                 <div className="page-footer">
                   <div className="page-tag">
                     {post.frontmatter.tags &&
@@ -81,6 +90,16 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY, MMM DD")
         tags
+        memorydata {
+          internal {
+            content
+          }
+        }
+        practicedata {
+          internal {
+            content
+          }
+        }
         img {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: [AUTO, AVIF, WEBP])
