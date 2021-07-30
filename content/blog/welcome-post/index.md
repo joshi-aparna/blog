@@ -5,6 +5,7 @@ description: # Add post description (optional)
 img: ./workflow.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [About, Personal] # add tag
+practicedata: ./practice.json
 ---
 
 I'd like to think that I am a [Kinesthetic](https://blog.advancementcourses.com/articles/4-types-of-learners-in-education/) learner. This blog is one of my experiments to learn Markdown, Gatsby and the art of writing a blog. 
