@@ -92,10 +92,10 @@
 }
 
 .card {
-  height: 12.7rem;
+  height: 15.7rem;
 	width: parent;
 	margin: 0.2rem 0.2rem;
-  font-size: 33px;
+  font-size: 23px;
   margin: 0.2rem 0.2rem;
 	background: #8e9183;;
 	color: #ffffff;
@@ -107,4 +107,5 @@
 	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
   position: relative;
   flex-direction: inherit;
+  padding: 20px;
 }

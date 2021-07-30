@@ -21,7 +21,7 @@ class MemoryCard extends React.Component {
       return (
         <div className="wrapper">
             <div className="card" id="memorycard"  onClick={this.handleClick}>
-            {this.cardTitles[this.state.index]}
+            <span className="card-content"> {this.cardTitles[this.state.index]}</span>
             </div>
         </div>
       );

@@ -44,6 +44,7 @@ class BlogPostTemplate extends React.Component {
                   </div>
                 </header>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <br/>
                 {post.frontmatter.memorydata && (
                   <MemoryCard content={post.frontmatter.memorydata.internal}/>
                 )}
