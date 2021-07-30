@@ -22,7 +22,7 @@ class PracticeCard extends React.Component {
     render() {
       return (
         <div className="wrapper">
-            <h3>{this.cardTitles[this.state.index]}</h3>
+            <h3 align="center">{this.cardTitles[this.state.index]}</h3>
             <div className="card" id="memorycard"  onClick={this.handleClick}>
             {this.state.isToggleOn ? '' : this.data[this.cardTitles[this.state.index]]}
             </div>
