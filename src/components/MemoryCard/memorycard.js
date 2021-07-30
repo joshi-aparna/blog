@@ -4,7 +4,6 @@ import '../../styles/main.scss'
 class MemoryCard extends React.Component {
     constructor(props) {
       super(props);
-      console.log(this.props.content)
       this.state = {isToggleOn: true, index : 0};
       this.data = this.props.content.content && JSON.parse(this.props.content.content)
       let contentKeys = Object.keys(this.data)
