@@ -4,7 +4,7 @@ date: 2021-07-30 00:00:00 +0300
 description: # Add post description (optional)
 img: ./sanskrit-prathama-head.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [sanskrit] # add tag
+tags: [sanskrit, prathama] # add tag
 practicedata: ./prathama-practice.json
 ---
 
