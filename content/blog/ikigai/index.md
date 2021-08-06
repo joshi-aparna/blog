@@ -4,7 +4,7 @@ date: 2021-07-18 00:00:00 +0530
 description: # Add post description (optional)
 img: ./ikigai.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [Book, Non-Fiction] # add tag
+tags: [book, non-fiction] # add tag
 memorydata: ./memorycard.json
 ---
 

@@ -8,7 +8,7 @@ tags: [sanskrit, numbers, sankhya] # add tag
 practicedata: ./numbers.json
 ---
 
-One day in class, we were learning the history of "zero". The invention of zero dated to 7th Century AD. Naturally, I started day dreaming. If zero was found only in the seventh century, how did they count Ravana's ten heads? How did they make stories about the hundred Kauravas? That day I went home and asked my mother. She told me that even though they did not have the annotion for zero, they had names for everything. Ten was _Dasha_ and thousand was _Sahasra_. She reminded me that I was already familiar with _Saharsra Naama_ such as Vishnu Sahasranaama and Lalitha Sahasranaama.  The tubelight in my brain lit up :joy_cat:
+One day in school, we were learning the history of "zero". The invention of zero dated to 7th Century AD. Naturally, I started day dreaming. If zero was found only in the seventh century, how did they count Ravana's ten heads? How did they make stories about the hundred Kauravas? That day I went home and asked my mother. She told me that even though they did not have the annotion for zero, they had names for everything. Ten was _Dasha_ and thousand was _Sahasra_. She reminded me that I was already familiar with _Saharsra Naama_ such as Vishnu Sahasranaama and Lalitha Sahasranaama.  The tubelight in my brain lit up :joy_cat:
 
 We use _Dasha_, _Shata_ and _Sahasra_ in everyday language. That is all I knew until recently. I learnt the names for multiples of ten in the Sanskrit class I attend regularly. You can find the lesson on [Youtube](https://youtu.be/2UxsbgATfIk). I am fascinated by this shloka I learnt in this class. It is something I want to remember.
 
