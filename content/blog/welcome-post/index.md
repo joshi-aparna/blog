@@ -13,3 +13,4 @@ I'd like to think that I am a [Kinesthetic](https://blog.advancementcourses.com/
 ### What will you find here
 
 As it says in the description of the blog, this is my personal space where you will find things I want to remember. I expect the blog to grow as my interest in various fields grow. You are welcome to the content. You are welcome to share it. You are welcome to learn with me. 
+PS: You can find the source code for this blog [here](https://github.com/joshi-aparna/blog)
