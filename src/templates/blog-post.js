@@ -13,10 +13,13 @@ import 'katex/dist/katex.min.css'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const seoimage = post.frontmatter.image
+      ? post.frontmatter.image.childImageSharp.resize
+      : null
 
     return (
       <DefaultLayout>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} image={seoimage} />
         <div className="clearfix post-content-box">
           <article className="article-page">
             <div className="page-content">
@@ -102,6 +105,11 @@ export const pageQuery = graphql`
         }
         img {
           childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: [AUTO, AVIF, WEBP])
           }
         }
