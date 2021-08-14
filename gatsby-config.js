@@ -4,7 +4,7 @@ module.exports = {
     title: `Aparna's Personal Space`,
     description: `This space will contain everything I want to remember.`,
     author: `Aparna Ravindra`,
-    siteUrl: `https://github.com/joshi-aparna/blog`,
+    siteUrl: `https://joshi-aparna.github.io/blog`,
     social: {
       twitter: `R_APARNA_`,
       facebook: ``,
@@ -14,6 +14,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
