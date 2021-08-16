@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, postImage: metaImage, title, path }) {
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null
-  const postUrl = `${site.siteMetadata.siteUrl}${slug}`
+  const postUrl = `${site.siteMetadata.siteUrl}${path}`
   return (
     <Helmet
       htmlAttributes={{
