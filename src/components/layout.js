@@ -22,6 +22,20 @@ const DefaultLayout = ({ children }) => (
               github
               email
             }
+            recommendations {
+              read {
+                title
+                link
+              }
+              listen {
+                title
+                link
+              }
+              watch {
+                title
+                link
+              }
+            }
           }
         }
       }
