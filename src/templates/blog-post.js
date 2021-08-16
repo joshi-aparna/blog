@@ -16,10 +16,10 @@ class BlogPostTemplate extends React.Component {
     const seoimage = post.frontmatter.img
       ? post.frontmatter.img.childImageSharp.resize
       : null
-
+    const slug = post.fields.slug
     return (
       <DefaultLayout>
-        <SEO title={post.frontmatter.title} description={post.excerpt} postImage={seoimage} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} postImage={seoimage} path={slug}/>
         <div className="clearfix post-content-box">
           <article className="article-page">
             <div className="page-content">
@@ -89,6 +89,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "YYYY, MMM DD")
