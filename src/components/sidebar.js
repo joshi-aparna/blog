@@ -17,6 +17,31 @@ const Sidebar = ({ siteMetadata }) => (
           <p>{siteMetadata.description}</p>
         </div>
       </header>
+      {siteMetadata.recommendations.read.title && (
+        <div className="post">
+        <div className="post-content">
+            <h4><i class="fa fa-book" aria-hidden="true"></i> Read</h4>
+            <a href={siteMetadata.recommendations.read.link}><p>{siteMetadata.recommendations.read.title}</p></a>
+        </div>
+      </div>
+      )}
+      {siteMetadata.recommendations.listen.title && (
+        <div className="post">
+        <div className="post-content">
+            <h4><i class="fa fa-headphones" aria-hidden="true"></i> Listen</h4>
+            <a href={siteMetadata.recommendations.listen.link}><p>{siteMetadata.recommendations.listen.title}</p></a>
+        </div>
+      </div>
+      )}
+      {siteMetadata.recommendations.watch.title && (
+        <div className="post">
+        <div className="post-content">
+            <h4><i class="fa fa-television" aria-hidden="true"></i> Watch</h4>
+            <a href={siteMetadata.recommendations.watch.link}><p>{siteMetadata.recommendations.watch.title}</p></a>
+        </div>
+      </div>
+      )}
+      
       <footer>
         <section className="contact">
           <h3 className="contact-title">Contact me</h3>
