@@ -13,13 +13,13 @@ import 'katex/dist/katex.min.css'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const seoimage = post.frontmatter.image
-      ? post.frontmatter.image.childImageSharp.resize
+    const seoimage = post.frontmatter.img
+      ? post.frontmatter.img.childImageSharp.resize
       : null
 
     return (
       <DefaultLayout>
-        <SEO title={post.frontmatter.title} description={post.excerpt} image={seoimage} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} postImage={seoimage} />
         <div className="clearfix post-content-box">
           <article className="article-page">
             <div className="page-content">
