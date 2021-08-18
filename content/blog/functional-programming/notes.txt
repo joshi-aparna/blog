@@ -1,0 +1,122 @@
+- funcational programming and OO programming are not opposites and can exist together
+- write programs like mathematical statements like f(x) = x + 1
+- It is a declarative style of programming (OOP is imperative style)
+- Imperative style talks how something is done. Declarative style talks about what the thing is. 
+Example: Average of array
+
+Imperative style -> set x to zero. Add array[0] to x. Repeat until the end of array. Divide x by the length of the array
+Declarative style -> Average is the sum of all elements divided by the number of elements.
+
+Core concepts 
+- Immutability
+- Functional purity
+- First class functions
+
+
+Immutability
+we are used to set a variable and change its value later. 
+x = 5
+.
+.
+.
+x = 10
+. 
+.
+x = 100
+This is not allowed in FP. x is not a vessel that holds the value 3. It is the value 3. Like, pi is 3.14. There is no state change. If you want a different value, define a new variable. 
+example: Employee aparna = new Employee("aparna', 10)
+OOP : aparna.setSalary(20)
+FP : updatedAparna = new Employee('aparna', 20)
+
+
+Functional purity:
+A function returns same output for the same set of arguments. 
+
+Impure function:
+Person {
+    private int age;
+    int getAge() {return age;}
+}
+person.getAge() -> 35
+person.setAge (50)
+person.getAge() -> different output.
+
+Pure Function -> deals with only inputs and local variables declared within the function
+add(x, y) {
+    return x + y;
+}
+
+First class functions
+In OOP we treat data and functions separately. In FP, they are all the same. We can create an array of functions, pass a function as argument, return a function from a method. 
+In java, there is Function interface that you can use to do this. 
+
+If you have a class and method like this:
+class MyClass {
+    public myMethod(int myArg) {
+        return myArg * 2
+    }
+}
+
+You can assign this to a variable like this:
+x = MyClass::myMethod
+We are not calling the method here. 
+
+Or you could define a new function 
+x = (y) -> {
+    return y * 2;
+}
+In Java, there is Function interface that works somehting like this
+Function<Integer,Integer> x = MyClass::myMethod
+x.apply(4) -> 8
+
+Annoying thing is that this interface works only for functions that take 1 arg. What about functions with more args or no args?
+
+BiFunction interface
+
+If you want any others, you will have to deefine your own interface. example: 
+
+interface ThreeArgFunction<T,U,V,R> {
+    R apply(T t,U u,V v);
+}
+
+ThreeArgFunction<Integer, Integer, Integer, Integer> addThree = (x,y,z) -> {return x + y + z;}
+
+Where is this useful? An example is a dataloader that loads data from database in production and gives some dummy data in development env.
+All the logic of how the data is loaded is inside the dataloader. The calling method need not be aware of this. 
+
+class DataLoader {
+    public final NoArgFunction<Employee> loadData;
+
+    public DataLoader(boolen isProductionEnv) {
+        loadData = isProductionEnv? this::datafromDatabase : this::dataForTesting
+    }
+    private Employee datafromDatabase() {
+        return database.get();
+    }
+
+    private Employee dataForTesting() {
+        return new Employee('aparna', 10);
+    }
+}
+
+
+Passing functions as args
+ - maps
+ - filters
+ - reduce
+ - collect
+
+
+ Advanced concepts
+ - Partial Application : 
+ Take a function with n arguments and fix the value for some of the arguments. If you have a function, where one of the arguments is same almost all the time, you can use this.
+ If you pass one arg at a time, it is called Currying.
+
+ - Recursion: 
+ - Composition : Take simple functions and combine them into a more complex function. 
+ ex: f(x) = x * 2   (timesTwo)
+     f(x) = x - 1   (minusOne)
+     combined: f(x) = 2x -1 
+
+     timesTwo.andThen(minusOne)
+Requirement is that the next function takes as argument the same type that the previous function returns

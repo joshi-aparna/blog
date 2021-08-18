@@ -20,7 +20,7 @@ const Sidebar = ({ siteMetadata }) => (
       {siteMetadata.recommendations.read.title && (
         <div className="post">
         <div className="post-content">
-            <h4><i class="fa fa-book" aria-hidden="true"></i> Read</h4>
+            <h4><i className="fa fa-book" aria-hidden="true"></i> Read</h4>
             <a href={siteMetadata.recommendations.read.link}><p>{siteMetadata.recommendations.read.title}</p></a>
         </div>
       </div>
@@ -28,7 +28,7 @@ const Sidebar = ({ siteMetadata }) => (
       {siteMetadata.recommendations.listen.title && (
         <div className="post">
         <div className="post-content">
-            <h4><i class="fa fa-headphones" aria-hidden="true"></i> Listen</h4>
+            <h4><i className="fa fa-headphones" aria-hidden="true"></i> Listen</h4>
             <a href={siteMetadata.recommendations.listen.link}><p>{siteMetadata.recommendations.listen.title}</p></a>
         </div>
       </div>
