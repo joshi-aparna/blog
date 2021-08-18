@@ -5,6 +5,7 @@ description: # Add post description (optional)
 img:  ./functional_programming.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech, functionalprogramming] # add tag
+memorydata: ./fp_quotes.json
 ---
 
 I completed a course on [Functional Programming](https://www.linkedin.com/learning/functional-programming-with-java/functional-programming-a-new-way-to-organize-code) on LinkedIn Learning and here is what I want to remember from it. 
