@@ -6,6 +6,7 @@ img: ./shashti-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [sanskrit, shashti] # add tag
 practicedata: ./shashti-practice.json
+memorydata: ./shashti-memory.json
 ---
 
 Let's talk about the _shashti vibhakti pratyaya_ today. This is called the "possessive case" in English. As the name says, it is used to show possession ownership or belonging. 
@@ -30,8 +31,8 @@ Some special words we could remember and practice are:
 Remember that we praticed the sentence "What is your name?" earlier [here](/sanskrit-prathama)? The word "your" is in shashti vibhakti. Do you remember the response to this question? When we say, "_My_ name is ____",  "_My_" is again in shashti vibhakti. So, what are the forms then?
 
 ```
-   अहम् -> मम​
-   त्वम्  -> तव​
+   अहम् -> मम​, आवाम् -> आवयो:, वयम् -> अस्माकम्
+   त्वम्  -> तव​, युवाम् -> युवयो: , यूयम् -> युष्माकम्
 ```
 
 #### So are these the only forms? Of course not :laughing:
