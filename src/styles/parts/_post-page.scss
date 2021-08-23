@@ -109,3 +109,15 @@
   flex-direction: inherit;
   padding: 20px;
 }
+
+.react-share__ShareButton{
+  margin-right: 1rem;
+
+     & a svg{
+        &:hover{
+           rect{
+              fill: var(--link-color) !important;
+          }
+      }
+    }
+}
