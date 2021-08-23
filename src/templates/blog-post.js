@@ -7,6 +7,7 @@ import DefaultLayout from '../components/layout'
 import MemoryCard from '../components/MemoryCard/memorycard'
 import PracticeCard from '../components/PracticeCard/practicecard'
 import SEO from '../components/seo'
+import ShareButtons from "../components/share"
 
 import 'katex/dist/katex.min.css'
 
@@ -17,6 +18,11 @@ class BlogPostTemplate extends React.Component {
       ? post.frontmatter.img.childImageSharp.resize
       : null
     const slug = post.fields.slug
+    const socail_share_title = `Read ${post.frontmatter.title} `;
+    const tags = post.frontmatter.tags;
+    const url = this.props.location.href;
+    const twitterHandle = "R_APARNA_";
+
     return (
       <DefaultLayout>
         <SEO title={post.frontmatter.title} description={post.excerpt} postImage={seoimage} path={slug}/>
@@ -54,6 +60,10 @@ class BlogPostTemplate extends React.Component {
                 {post.frontmatter.practicedata && (
                   <PracticeCard content={post.frontmatter.practicedata.internal}/>
                 )}
+                <br/>
+                <div>
+                  <ShareButtons title={socail_share_title} url={url} twitterHandle={twitterHandle} tags={tags}/>
+                </div>
                 <div className="page-footer">
                   <div className="page-tag">
                     {post.frontmatter.tags &&
