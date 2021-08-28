@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import BlogItems from './blog-item'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -13,7 +14,7 @@ const Tags = ({ pageContext, data }) => {
       <div className="content-box clearfix">
         <div className="blog-tags">
           <h1>{tagHeader}</h1>
-          <ul className="tag-list">
+          {/* <ul className="tag-list">
             {edges.map(({ node }) => {
               const { title, date } = node.frontmatter
               const { slug } = node.fields
@@ -24,7 +25,8 @@ const Tags = ({ pageContext, data }) => {
                 </li>
               )
             })}
-          </ul>
+          </ul> */}
+          <BlogItems items={edges} />
           <span>
             <Link to="/tags">← All tags</Link>
           </span>
@@ -46,12 +48,19 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY, MMM DD")
+            img {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: [AUTO, AVIF, WEBP])
+              }
+            }
           }
         }
       }
