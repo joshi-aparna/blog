@@ -1,6 +1,6 @@
 ---
 title: IKIGAI
-date: 2021-07-18 00:00:00 +0530
+date: 2021-07-18 00:00:00-05:30
 description: # Add post description (optional)
 img: ./ikigai.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)

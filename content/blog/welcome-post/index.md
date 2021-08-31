@@ -1,6 +1,6 @@
 ---
 title: About me
-date: 2021-07-16 00:00:00 +0300
+date: 2021-07-16 00:00:00-05:30
 description: # Add post description (optional)
 img: ./workflow.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)

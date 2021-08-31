@@ -1,6 +1,6 @@
 ---
 title: Functional Programming 
-date: 2021-08-18 00:00:00 +0530
+date: 2021-08-18 00:00:00-05:30
 description: # Add post description (optional)
 img:  ./functional_programming.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)

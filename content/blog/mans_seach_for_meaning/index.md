@@ -1,6 +1,6 @@
 ---
 title: Man's Search for Meaning
-date: 2021-08-06 00:00:00 +0530
+date: 2021-08-06 00:00:00-05:30
 description: # Add post description (optional)
 img: ./mans_search_title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)

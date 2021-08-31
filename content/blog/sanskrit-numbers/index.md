@@ -1,6 +1,6 @@
 ---
 title: What's your number? - Sanskrit Sankhya
-date: 2021-08-03 00:00:00 +0530
+date: 2021-08-03 00:00:00-05:30
 description: # Add post description (optional)
 img: ./numbers2.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
