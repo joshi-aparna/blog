@@ -60,8 +60,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 970,
-	      withWebp: true,
-	      withAvif: true,
+              withWebp: true,
+              withAvif: true,
             },
           },
           {
@@ -69,6 +69,12 @@ module.exports = {
             options: {
               strict: `warn`,
             },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+            }
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
