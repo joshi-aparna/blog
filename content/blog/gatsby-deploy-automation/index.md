@@ -1,6 +1,6 @@
 ---
 title: Gatsby - How to automate deployment using Github Actions
-date: 2021-09-01 00:00:00-05:30
+date: 2021-09-02 00:00:00-05:30
 description: # Add post description (optional)
 img: ./gatsby-gh-actions-deployment-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)

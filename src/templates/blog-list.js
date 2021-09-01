@@ -68,6 +68,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
+      filter: { isFuture: {  eq: false } } 
     ) {
       edges {
         node {

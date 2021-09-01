@@ -2,6 +2,30 @@ const path = require(`path`)
 const _ = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes, createFieldExtension } = actions
+
+  const isFuture = () => (source) => {
+    const date = source.frontmatter.date
+    return new Date(date) > new Date()
+  }
+
+  createFieldExtension({
+    name: "isFuture",
+    extend() {
+      return {
+        resolve: isFuture(),
+      }
+    },
+  })
+
+  createTypes(`
+    type MarkdownRemark implements Node {
+      isFuture: Boolean! @isFuture
+    }
+  `)
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
