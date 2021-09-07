@@ -6,11 +6,18 @@ import Helmet from 'react-helmet'
 import Sidebar from '.././components/sidebar'
 import '../styles/main.scss'
 import '../styles/fonts/font-awesome/css/font-awesome.min.css'
-
+const tags = [{"name":"tag1"}]
 const DefaultLayout = ({ children }) => (
+  
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
+        allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+          }
+        }
         site {
           siteMetadata {
             author
@@ -40,6 +47,7 @@ const DefaultLayout = ({ children }) => (
         }
       }
     `}
+    
     render={data => (
       <div className="wrapper">
         <Helmet>
@@ -48,8 +56,9 @@ const DefaultLayout = ({ children }) => (
             rel="stylesheet"
           />
         </Helmet>
-        <Sidebar siteMetadata={data.site.siteMetadata} />
+        <Sidebar siteMetadata={data.site.siteMetadata} tags={data.allMarkdownRemark.group} />
         {children}
+        <Sidebar tags={data.allMarkdownRemark.group} />
       </div>
     )}
   />
