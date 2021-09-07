@@ -13,17 +13,13 @@ module.exports = {
       email: `aparnaravindrajoshi@gmail.com`,
     },
     recommendations: {
-      read: {
-        title: `Designing Data Intensive Applications`,
-        link: `https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/`
-      },
       listen: {
         title: `Squiggly Careers - How to negotiate for what you need`,
         link: `https://www.amazingif.com/listen/how-to-negotiate-for-what-you-need/`,
       },
       watch: {
-        title: ``,
-        link: `test`,
+        title: `Chocolat`,
+        link: `https://www.netflix.com/in/title/60003116`,
       }
     },
   },
