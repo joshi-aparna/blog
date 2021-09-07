@@ -36,7 +36,7 @@ const Sidebar = ({ siteMetadata }) => (
       {siteMetadata.recommendations.watch.title && (
         <div className="post">
         <div className="post-content">
-            <h4><i class="fa fa-television" aria-hidden="true"></i> Watch</h4>
+            <h4><i className="fa fa-television" aria-hidden="true"></i> Watch</h4>
             <a href={siteMetadata.recommendations.watch.link}><p>{siteMetadata.recommendations.watch.title}</p></a>
         </div>
       </div>
