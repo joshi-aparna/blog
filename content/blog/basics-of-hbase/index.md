@@ -25,7 +25,7 @@ If you are familiar with relational databases, you will be familiar with schemas
 In a relational database, the data for a row in stored together on disk. Taking the student example above, if you find the name column, you will see that the branch and city columns are right next it to. The information for a different student might reside somewhere else. 
 ![Relational_Store](./relational_store.jpg)
 But in Hbase, data for a column is stored together. For a key (UniversitySudentNumber), if you find the Branch information, you will see that the next block on the disk contains Branch information for some other student. The City information of the student might reside somewhere else. 
-![Columnal_Store](./columnal_store.png)
+![Columnar_Store](./columnar_store.png)
 
 You can store a few columns together by grouping them together into `ColumnFamilies`. If we had to group columns in our student database, we might choose to group columns related to personal information such as Home Address, Parent's name into one column family. The information related to the college, course can be grouped into another column family. This way, you bring in a little bit of structure to the NoSQL datastore. 
 
