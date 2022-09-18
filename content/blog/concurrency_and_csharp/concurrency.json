@@ -1,0 +1,12 @@
+[
+    "Concurrency is doing more than one thing at a time.",
+    "Multithreading is a form of concurrency that uses multiple threads of execution.",
+    "Parallel processing is doing lots of work by dividing it up among multiple threads that run concurrently.",
+    "Parallel processing is one type of multithreading, and multithreading is one type of concurrency.",
+    "Data parallelism is when you have a bunch of data items to process, and the processing of each piece of data is mostly independent from the other pieces.",
+    "Task parallelism is when you have a pool of work to do, and each piece of work is mostly independent from the other pieces.",
+    "Global Task Queue is used to manage the items with FIFO",
+    "If Worker threads enqueue work items they have their local queue for that and have access to head only LIFO. Hence Reversed execution.",
+    "Hill Climbing heuristic - to maximize throughput with fewer threads.",
+    "Hill Climbing algorithm advices to increase the thread count only if the CPU utilization is below 95%."
+]
