@@ -14,16 +14,16 @@ module.exports = {
     },
     recommendations: {
       read: {
-        title: ``,
-        link: `https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/`
+        title: `The Code Breaker`,
+        link: `https://www.goodreads.com/book/show/54968118-the-code-breaker`
       },
       listen: {
-        title: `Squiggly Careers - How to negotiate for what you need`,
+        title: ``,
         link: `https://www.amazingif.com/listen/how-to-negotiate-for-what-you-need/`,
       },
       watch: {
-        title: `Chocolat`,
-        link: `https://www.netflix.com/in/title/60003116`,
+        title: `Istio & Service Mesh - simply explained in 15 mins`,
+        link: `https://youtu.be/16fgzklcF7Y`,
       }
     },
   },
