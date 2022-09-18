@@ -2,7 +2,7 @@
 title: Concurrency and C#
 date: 2022-09-18 00:00:00-05:30
 description: # Add post description (optional)
-img:  ./functional_programming.png # Add image post (optional)
+img:  ./title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech, concurrency] # add tag
 memorydata: ./concurrency.json
