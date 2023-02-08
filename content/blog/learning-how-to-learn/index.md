@@ -16,7 +16,7 @@ Focused mode of thinking is when you concentrate intently on something, like sol
 An example cited in the course is that of Edison. What he used to do was, he'd sit and relax in in chair holding ball bearings in his hand. He would then let his mind run free. He found that his thoughts would circle back to what he was focusing on earlier. When Edison fell asleep, the ball bearings would drop to the floor and wake him up. He would then gather the ideas that crossed his mind in the diffused thinking and focus to build them further. 
 
 # Chunking
-Cunking is the mental leap that helps you unite bits of information together. With practice, the bits of information, or the chunks, become bigger and more efficient.
+Chunking is the mental leap that helps you unite bits of information together. With practice, the bits of information, or the chunks, become bigger and more efficient.
 
 For example, a child learning to add numbers at first will make use of their fingers to count. But with enough practice, they will be able to add numbers or do multiplication mentally without counting on fingers. 
 
