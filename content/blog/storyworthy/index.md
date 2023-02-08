@@ -2,7 +2,7 @@
 title: STORYWORTHY
 date: 2023-02-07 00:00:00-05:30
 description: # Add post description (optional)
-img: ./storyworthytitle.jpg # Add image post (optional)
+img: ./storyworthyname.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
 memorydata: ./memorycard.json
