@@ -2,7 +2,7 @@
 title: Psychology Of Money
 date: 2023-03-23 00:00:00-05:30
 description: # Add post description (optional)
-img: ./money.jpg # Add image post (optional)
+img: ./money.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
 memorydata: ./memorycard.json
