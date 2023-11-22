@@ -2,7 +2,7 @@
 title: Big Magic
 date: 2023-11-20 00:00:00-05:30
 description: # Add post description (optional)
-img: ./big_magic.png # Add image post (optional)
+img: ./big_magic.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
 memorydata: ./big_magic.json
