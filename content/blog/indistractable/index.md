@@ -2,7 +2,7 @@
 title: Indistractable
 date: 2025-02-09 00:00:00-05:30
 description: # Add post description (optional)
-img: ./indistractable.png # Add image post (optional)
+img: ./indistractable.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction, habits] # add tag
 memorydata: ./indistractable.json
