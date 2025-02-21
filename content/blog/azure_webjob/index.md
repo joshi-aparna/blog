@@ -107,7 +107,11 @@ A few things to remember:
 I create a new resource group on Azure and start deployment of the ARM template using the following command:
  `az deployment group create --name MyWebAppWithWebjobDeployment --resource-group coreapptest --template-file .\deploy.json`
 
-Navigate to your resouce group -> webapp -> settings -> webjobs to find the deployed webjob. Hit "Run" to get started :) Happy coding :)
+Navigate to your resouce group -> webapp -> settings -> webjobs to find the deployed webjob. Hit "Run" to get started.
+
+
 ![image](https://github.com/user-attachments/assets/3b51e5a0-0553-49c7-a8ad-504fb7812cdf)
 
+
+**Happy coding :)**
 
