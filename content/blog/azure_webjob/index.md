@@ -107,6 +107,7 @@ Link to the ARM template:
 A few things to remember:
 1. Set WEBSITES_ENABLE_APP_SERVICE_STORAGE to true
 2. Set WEBJOBS_IDLE_TIMEOUT appropriately. In my example, I set it to 86400.
+3. Set "alwaysOn" to true
 
 I create a new resource group on Azure and start deployment of the ARM template using the following command:
  `az deployment group create --name MyWebAppWithWebjobDeployment --resource-group coreapptest --template-file .\deploy.json`
