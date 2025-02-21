@@ -96,6 +96,18 @@ COPY --from=publishwebjob /app/publish .
 ENTRYPOINT ["cmd", "/c", "startup.cmd && dotnet coreapp.dll"]
 ```
 
+### Publish the coreapp project
+Right click on the webapi project and select 'Publish'. In this example, I am publishing the image to Azure Container Registry. (Azure -> Azure Container Registry). 
+
+### ARM template
+I use the following ARM template to deploy the webapp along with the webjob. 
+Link to the ARM template:
+(Note: In the linked ARM template, replace the placeholder values with the right values for your project)
+
+A few things to remember:
+1. Set WEBSITES_ENABLE_APP_SERVICE_STORAGE to true
+2. Set WEBJOBS_IDLE_TIMEOUT appropriately. In my example, I set it to 86400.
+
 
 
 
