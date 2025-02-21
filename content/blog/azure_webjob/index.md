@@ -35,7 +35,8 @@ Create a dotnet core console project to act as your webjob. My solution tree and
 ![Folder View](https://github.com/user-attachments/assets/479f2f4b-542b-41aa-ad53-1528d52d478b)
 
 ### Write code for webjob
-Follow the official document to write the code for the webjob using the [WebJobs SDK](https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started).
+Follow the official document to write the code for the webjob using the [WebJobs SDK](https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started). Additionally, add a Nuget reference to Microsoft.Extensions.Logging.Console for console logging in your webjob.
+
 Link to an example Program.cs:
 Link to an example Function.cs:
 
@@ -43,7 +44,7 @@ Link to an example Function.cs:
 The run.cmd file is executed by the Azure Webjob. The content of this file will simply hold the command to execute the project.
 `
 @echo off
-dotnet BotBuilderIndexer.dll
+dotnet webjob.dll
 `
 The settings.job file holds the configuration for the webjob, such as the schedule. Read more [here](https://learn.microsoft.com/en-us/azure/app-service/webjobs-dotnet-deploy-vs#settingsjob-reference). My settings.job file looks like this:
 `
@@ -52,6 +53,30 @@ The settings.job file holds the configuration for the webjob, such as the schedu
 }
 `
 **Ensure to include both these files in your project!**
+
+### Let's dockerize!
+I have ensured in my project structure that the solution file is in the parent folder of both the webapp and webjob projects. Right click on the webapp project -> Add -> Docker support.
+Ensure that you have docker desktop app running.
+
+**Improtant! Set the "Docker Build Context" to the parent folder containing both the webapp and webjob projects**
+
+![image](https://github.com/user-attachments/assets/ba80da0b-a548-47c5-94c0-956b7ee1bdaf)
+
+### Add webjob build and deploy steps to the docker file
+Since the docker build context is set to a folder containing both webapp and webjob projects, you can build and publish the webjob project in the same docker file. Ensure that the webjob project is published to the path `app_data/jobs/triggered/webjob` for triggered webjobs and `app_data/jobs/continuous/webjob` for continuous webjob. Here `webjob` is the name of the webjob.
+
+After the publish stage of the dotnet core api project, add the following lines
+```
+# This stage is used to build the webjob project
+FROM publish AS publishwebjob
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["webjob/webjob.csproj", "webjob/"]
+RUN dotnet restore "./webjob/webjob.csproj"
+COPY . .
+WORKDIR "/src/webjob"
+RUN dotnet publish "./webjob.csproj" -c %BUILD_CONFIGURATION% -o /app/publish/app_data/jobs/triggered/webjob /p:UseAppHost=false
+```
 
 
 
