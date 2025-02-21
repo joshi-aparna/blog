@@ -22,11 +22,6 @@ So, I set out to figure a way out. Here is how I would set things up for a brand
 ### Create a new Dotnet Core project 
 ![newdotnetcorewebproject](https://github.com/user-attachments/assets/af753581-0a1a-4ccc-bfcb-df5324f1de95)
 
-### Add a test html file (optional)
-I do this to make it easy to test the project. The project came with a WeatherForecastController that you could use to test your deployed project as well.
-
-![htmlfileinwebapp](https://github.com/user-attachments/assets/906b0cec-341a-4b2d-9238-424f95cda1d7)
-
 ### Create another console project in the same solution
 Create a dotnet core console project to act as your webjob. My solution tree and project structure look like this:
 
@@ -37,8 +32,8 @@ Create a dotnet core console project to act as your webjob. My solution tree and
 ### Write code for webjob
 Follow the official document to write the code for the webjob using the [WebJobs SDK](https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started). Additionally, add a Nuget reference to Microsoft.Extensions.Logging.Console for console logging in your webjob.
 
-Link to an example Program.cs:
-Link to an example Function.cs:
+Link to an example Program.cs: https://github.com/joshi-aparna/AzureWebAppWithWebJob/blob/master/webjob/Program.cs
+Link to an example Function.cs: https://github.com/joshi-aparna/AzureWebAppWithWebJob/blob/master/webjob/Functions.cs
 
 ### Add a run.cmd and settings.job file to the webjob project
 The run.cmd file is executed by the Azure Webjob. The content of this file will simply hold the command to execute the project.
@@ -101,7 +96,7 @@ Right click on the webapi project and select 'Publish'. In this example, I am pu
 
 ### ARM template
 I use the following ARM template to deploy the webapp along with the webjob. 
-Link to the ARM template:
+Link to the ARM template: https://github.com/joshi-aparna/AzureWebAppWithWebJob/blob/master/coreapp/deployment/deploy.json
 (Note: In the linked ARM template, replace the placeholder values with the right values for your project)
 
 A few things to remember:
