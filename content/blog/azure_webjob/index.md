@@ -20,3 +20,39 @@ So, I set out to figure a way out. Here is how I would set things up for a brand
 2. The example here uses Visual Studio
 
 ### Create a new Dotnet Core project 
+![newdotnetcorewebproject](https://github.com/user-attachments/assets/af753581-0a1a-4ccc-bfcb-df5324f1de95)
+
+### Add a test html file (optional)
+I do this to make it easy to test the project. The project came with a WeatherForecastController that you could use to test your deployed project as well.
+
+![htmlfileinwebapp](https://github.com/user-attachments/assets/906b0cec-341a-4b2d-9238-424f95cda1d7)
+
+### Create another console project in the same solution
+Create a dotnet core console project to act as your webjob. My solution tree and project structure look like this:
+
+![Solution structure](https://github.com/user-attachments/assets/9a1ddba9-8c08-4213-925b-9d9fab8cc655)
+
+![Folder View](https://github.com/user-attachments/assets/479f2f4b-542b-41aa-ad53-1528d52d478b)
+
+### Write code for webjob
+Follow the official document to write the code for the webjob using the [WebJobs SDK](https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started).
+Link to an example Program.cs:
+Link to an example Function.cs:
+
+### Add a run.cmd and settings.job file to the webjob project
+The run.cmd file is executed by the Azure Webjob. The content of this file will simply hold the command to execute the project.
+`
+@echo off
+dotnet BotBuilderIndexer.dll
+`
+The settings.job file holds the configuration for the webjob, such as the schedule. Read more [here](https://learn.microsoft.com/en-us/azure/app-service/webjobs-dotnet-deploy-vs#settingsjob-reference). My settings.job file looks like this:
+`
+{
+  "schedule": "0 0 0 * * *"
+}
+`
+**Ensure to include both these files in your project!**
+
+
+
+
