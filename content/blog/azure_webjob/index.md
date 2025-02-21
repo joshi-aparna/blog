@@ -78,6 +78,24 @@ WORKDIR "/src/webjob"
 RUN dotnet publish "./webjob.csproj" -c %BUILD_CONFIGURATION% -o /app/publish/app_data/jobs/triggered/webjob /p:UseAppHost=false
 ```
 
+### Copy the webjob files to app_data on before service start
+[This official document](https://learn.microsoft.com/en-us/azure/app-service/webjobs-create?tabs=windowscode#continuous-vs-triggered-webjobs) says that the files for the webjob need to be in the \site\wwwroot\app_data\Jobs path. In our docker file, we have set our work directory as /app.
+`WORKDIR /app`
+So, before starting the application, let us move the webjob files to the required path. To do this, create a file called `startup.cmd` in your webapi project with the following content. 
+```
+@echo off
+xcopy /s /e /y "C:\app\app_data" "C:\home\site\wwwroot\App_data\"
+```
+
+Then, in the dockerfile, change the entry point to the following.
+**Notice that the COPY stage is using the "publishwebjob" stage for the `from` parameter.**
+```
+FROM base AS final
+WORKDIR /app
+COPY --from=publishwebjob /app/publish .
+ENTRYPOINT ["cmd", "/c", "startup.cmd && dotnet coreapp.dll"]
+```
+
 
 
 
