@@ -2,7 +2,7 @@
 title: Lean In
 date: 2025-04-11 00:00:00-05:30
 description: # Add post description (optional)
-img: ./leanin.png # Add image post (optional)
+img: ./leanin.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
 memorydata: ./memory.json
