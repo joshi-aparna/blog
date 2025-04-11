@@ -5,7 +5,7 @@ description: # Add post description (optional)
 img: ./leanin.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
-memorydata: ./atomic_habits.json
+memorydata: ./memory.json
 ---
 Lean In by Sheryl Sandberg is a motivational book. I relate to her because, like her, I come from a provileged background. Like her, I did not face economic or social hardships while growing up. Yet, like her, there are other challenges I face that limit my growth.
 Sheryl Sandberg gives three tips to help.
