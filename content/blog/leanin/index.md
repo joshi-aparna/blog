@@ -7,7 +7,7 @@ fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
 memorydata: ./memory.json
 ---
-Lean In by Sheryl Sandberg is a motivational book. I relate to her because, like her, I come from a provileged background. Like her, I did not face economic or social hardships while growing up. Yet, like her, there are other challenges I face that limit my growth.
+Lean In by Sheryl Sandberg is a motivational book. I relate to her because, like her, I come from a privileged background. Like her, I did not face economic or social hardships while growing up. Yet, like her, there are other challenges I face that limit my growth.
 Sheryl Sandberg gives three tips to help.
 1. Raise your hand: Saying yes to opportunities.
 2. Make your partner a real partner: Share responsibilities with your partner at home and trust them to carry their share of load.
