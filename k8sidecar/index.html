@@ -9,7 +9,7 @@
 <p>That was my situation with a workload in Kubernetes:</p>
 <ul>
 <li>Container A consumed logs to export to an external system using a custom exe.</li>
-<li>Container B generated business logic that generates the logs.</li>
+<li>Container B contained business logic that generates the logs.</li>
 </ul>
 <p>Container A needed a non-deterministic time to authenticate to the external system and start the log consumption service. If B started too early, logs were lost.</p>
 <hr>
