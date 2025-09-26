@@ -2,7 +2,7 @@
 title: How I fixed Startup-Order Problem in Kubernetes (with Windows Containers)
 date: 2025-09-26 00:00:00-05:30
 description: # Add post description (optional)
-img: ./atomic_habits.png # Add image post (optional)
+img: ./sidecar.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
