@@ -96,6 +96,8 @@ In this example, the "sidecar" container is started first because it is an "init
 The magic ingredient here is the "restartPolicy" that continues to run the initcontainer as a sidecar. This is different from the normal behaviour where the initcontainer runs to completion.
 
 Note that the main container is not even started (even the image is not pulled) until the init container is started successfully. This provides "true" sequence of execution.
+
+
 Word of caution: Ensure that the sidecar feature is available for your K8 version.
 
 ## So what if my K8 version does not support sidecars?
