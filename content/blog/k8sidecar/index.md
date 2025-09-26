@@ -100,6 +100,10 @@ Note that the main container is not even started (even the image is not pulled) 
 
 Word of caution: Ensure that the sidecar feature is available for your K8 version.
 
-## So what if my K8 version does not support sidecars?
+This small shift saved me hours of debugging and gave me a reliable startup sequence for my Pod.
+
+👉 Have you tried sidecar-style init containers? Would love to hear how you’ve used them — especially on Windows.
+
+## Bonus: So what if my K8 version does not support sidecars?
 I was also exploring ways to ensure process start sequence across two containers where sidecars are not available. The quick and dirty way to make this happen is to give a signal in Container A (log consumer) that the process is ready and wait for the signal in Container B (log generator) before starting the process. This way, you can allow K8 to download the images for the container and go ahead with the "entry point" code without having to wait. However, this is not clean code because the log generator needs to be aware of the container A.
 If you really need to go this route, consider using ["postStart event"](https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/) to wait for the log consumer service to start and then create signal. The signal can be something as crude as a file in a common mounted volume between both the containers.
