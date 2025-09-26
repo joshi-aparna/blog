@@ -14,16 +14,16 @@ module.exports = {
     },
     recommendations: {
       read: {
-        title: `The Code Breaker`,
-        link: `https://www.goodreads.com/book/show/54968118-the-code-breaker`
+        title: `Start With Why`,
+        link: `https://www.goodreads.com/book/show/7108725-start-with-why`
       },
       listen: {
         title: ``,
         link: `https://www.amazingif.com/listen/how-to-negotiate-for-what-you-need/`,
       },
       watch: {
-        title: `Istio & Service Mesh - simply explained in 15 mins`,
-        link: `https://youtu.be/16fgzklcF7Y`,
+        title: ``,
+        link: ``,
       }
     },
   },
