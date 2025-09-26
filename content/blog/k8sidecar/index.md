@@ -92,7 +92,7 @@ spec:
             cpu: "400m"
             memory: "600Mi"
 ```
-In this example, the "sidecar" container is started first because it is an "initcontainer". The main container is not started until the ["startup probe"](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/#startup-probe) returns a success. However, it checks only 10 times before failing the pod instead of waiting forever for the initcontainer to be started.
+In this example, the "sidecar" container is started first because it is an ["init container"](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/). The main container is not started until the ["startup probe"](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/#startup-probe) returns a success. However, it checks only 10 times before failing the pod instead of waiting forever for the initcontainer to be started.
 The magic ingredient here is the "restartPolicy" that continues to run the initcontainer as a sidecar. This is different from the normal behaviour where the initcontainer runs to completion.
 
 Note that the main container is not even started (even the image is not pulled) until the init container is started successfully. This provides "true" sequence of execution.
