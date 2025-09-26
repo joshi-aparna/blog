@@ -12,7 +12,7 @@ Have you ever had two containers in the same Pod, but one absolutely needed to b
 That was my situation with a workload in Kubernetes:
 
 - Container A consumed logs to export to an external system using a custom exe.  
-- Container B generated business logic that generates the logs.  
+- Container B contained business logic that generates the logs.  
 
 Container A needed a non-deterministic time to authenticate to the external system and start the log consumption service. If B started too early, logs were lost.
 
