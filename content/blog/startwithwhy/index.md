@@ -2,10 +2,9 @@
 title: Start With Why
 date: 2025-09-28 00:00:00-05:30
 description: # Add post description (optional)
-img: ./startwithwhy.png # Add image post (optional)
+img: ./startwithwhy.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
-memorydata: ./atomic_habits.json
 ---
 I recently finished *Start with Why* by Simon Sinek, and two ideas stayed with me long after I closed the book. The first is his “Golden Circle” concept. Most of us explain what we do, maybe how we do it, and stop there. But Sinek flips it. He says everything meaningful starts with *why*—the purpose, belief or reason behind what we do. Then comes the *how*, which is the process or approach that brings that purpose to life. Only then comes the *what*, the actual product or outcome. We’re so used to communicating from the outside in—what, how, and rarely why. But the leaders and organisations that inspire us the most do the opposite. They start with why and work their way out. It sounds simple, but when you look at brands or individuals you admire, this pattern becomes obvious.
 
