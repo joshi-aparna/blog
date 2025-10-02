@@ -4,7 +4,7 @@ date: 2021-11-25 00:00:00-05:30
 description: Part One of Hbase Introduction
 img: ./basics_hbase.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, hbase, no-sql] # add tag
+tags: [tech] # add tag
 ---
 
 We are all familiar that Hbase is a NoSQL datastore. Let us go one level deeper to understand how it works on a high level. 

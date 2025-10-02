@@ -4,7 +4,7 @@ date: 2025-02-09 00:00:00-05:30
 description: # Add post description (optional)
 img: ./indistractable.jpeg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [book, non-fiction, habits] # add tag
+tags: [book, non-fiction] # add tag
 memorydata: ./indistractable.json
 ---
 I re-read Indistractable by Nir Eyal because I realised I did not remember any of the concepts from the book from the first time I read using Audible. This time, I made sure to make notes. I found a lot of similarities in writing with Atomic Habits.

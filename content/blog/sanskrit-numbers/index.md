@@ -4,7 +4,7 @@ date: 2021-08-03 00:00:00-05:30
 description: # Add post description (optional)
 img: ./numbers2.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [sanskrit, numbers, sankhya] # add tag
+tags: [course, language] # add tag
 practicedata: ./numbers.json
 ---
 

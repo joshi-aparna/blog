@@ -4,7 +4,7 @@ date: 2021-09-02 00:00:00-05:30
 description: # Add post description (optional)
 img: ./gatsby-gh-actions-deployment-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, github-actions, gatsby] # add tag
+tags: [tech] # add tag
 ---
 I decided to write this blog with Gatsby and run it on Github Pages because I am on a quest to learn markdown and I like the idea of having version control over the articles. Some times I have too many ideas for the articles. Sometimes I am not able to finish the entire article at once and might need to jump between multiple posts. So, I usually start a new article on a new git branch. My articles so far have been unrelated, so I merge the finished articles to the master branch in different orders as and when they are ready. 
 

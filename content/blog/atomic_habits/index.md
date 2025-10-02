@@ -4,7 +4,7 @@ date: 2021-08-09 00:00:00-05:30
 description: # Add post description (optional)
 img: ./atomic_habits.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [book, non-fiction, habits] # add tag
+tags: [book, non-fiction] # add tag
 memorydata: ./atomic_habits.json
 ---
 

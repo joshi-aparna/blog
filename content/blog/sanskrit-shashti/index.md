@@ -4,7 +4,7 @@ date: 2021-08-20 00:00:00-05:30
 description: # Add post description (optional)
 img: ./shashti-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [sanskrit, shashti] # add tag
+tags: [course, language] # add tag
 practicedata: ./shashti-practice.json
 memorydata: ./shashti-memory.json
 ---

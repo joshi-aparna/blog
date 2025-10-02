@@ -4,7 +4,7 @@ date: 2021-08-31 00:00:00-05:30
 description: # Add post description (optional)
 img: ./reuse-component-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, react, gatsby] # add tag
+tags: [tech] # add tag
 ---
 I started this blog using the template present in the github repository [here](https://github.com/wangonya/flexible-gatsby). The template came with a `/tags/<<tagname>>` page where the page lists all the blog posts with the tag `<<tagname>>`. The tags page looked like this:
 ![Tags Page - Before](./tagpage-before.jpg)
