@@ -4,7 +4,7 @@ date: 2022-01-16 00:00:00-05:30
 description: # Add post description (optional)
 img: ./thinkagain_title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [review, book, non-fiction] # add tag
+tags: [book, non-fiction] # add tag
 ---
 
 I am not a fan of audio books in general. Think Again by Adam Grant is an exception because I think it has been narrated well by the author himself. I listened the Audible audio book for a few minutes everyday. It captured my attention till the end. 
