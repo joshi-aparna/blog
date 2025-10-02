@@ -4,7 +4,7 @@ date: 2022-09-18 00:00:00-05:30
 description: # Add post description (optional)
 img:  ./title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, concurrency] # add tag
+tags: [tech] # add tag
 memorydata: ./concurrency.json
 ---
 
