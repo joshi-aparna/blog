@@ -4,7 +4,7 @@ date: 2021-11-21 00:00:00-05:30
 description: # Add post description (optional)
 img: ./service_mesh.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, kubernetes, service-mesh, micro-service, istio] # add tag
+tags: [tech] # add tag
 ---
 
 Service Mesh is not new. But it continues to be a buzz word. It sounds quite complex for someone new. So, I intend to break it down (for my own understanding as well :wink:). 
