@@ -4,7 +4,7 @@ date: 2021-08-16 00:00:00-05:30
 description: # Add post description (optional)
 img: ./seo.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, seo] # add tag
+tags: [tech] # add tag
 ---
 
 SEO stands for Search Engine Optimization. Search engines like Google (with 92+ percent market share) do a lot of preprocessing and prepare an index of data. If you manage to get your website on the index, it will start appearing in the search results. The question then is - how to make sure your website is on the index? Here is my understanding of SEO for beginners. Let's explore a few search engine optimization techniques that is used in digital marketing.
