@@ -4,7 +4,7 @@ date: 2021-08-18 00:00:00-05:30
 description: # Add post description (optional)
 img:  ./functional_programming.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, functionalprogramming] # add tag
+tags: [tech] # add tag
 memorydata: ./fp_quotes.json
 ---
 
