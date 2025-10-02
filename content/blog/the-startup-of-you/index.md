@@ -5,7 +5,7 @@ description: # Add post description (optional)
 img: ./startup_title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 memorydata: ./quotes.json
-tags: [review, book, non-fiction] # add tag
+tags: [book, non-fiction] # add tag
 ---
 
 The Startup of You by Reid Hoffman and Ben Casnocha is a short book. It is practical and has actionable advices at the end of each chapter. The book encourages you to treat your career like a start up company. 
