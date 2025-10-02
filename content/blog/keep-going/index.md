@@ -4,7 +4,7 @@ date: 2021-08-23 00:00:00-05:30
 description: # Add post description (optional)
 img: ./keep-going-header.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [austin kleon, review, book, non-fiction, gift] # add tag
+tags: [book, non-fiction] # add tag
 memorydata: ./keep_going_quotes.json
 ---
 
