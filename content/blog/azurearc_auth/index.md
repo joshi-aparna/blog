@@ -31,7 +31,7 @@ Here’s the trick: Arc-enabled servers use a **local agent** that acts as a bri
 2. Sets up a local token service (similar to IMDS, but not the same).
 3. Handles token requests from your app.
 
-The local endpoint is usually at `http://localhost:40342/metadata/identity/oauth2/token`, and it behaves similarly to the Azure VM IMDS endpoint—but under the hood, it’s the Arc agent doing the heavy lifting.
+The local endpoint is usually at `http://localhost:40342/metadata/identity/oauth2/token` (discover it using $env:IDENTITY_ENDPOINT), and it behaves similarly to the Azure VM IMDS endpoint—but under the hood, it’s the Arc agent doing the heavy lifting.
 
 ---
 
