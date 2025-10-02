@@ -4,7 +4,7 @@ date: 2021-09-06 00:00:00-05:30
 description: # Add post description (optional)
 img: ./actions-mysql-title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [tech, github-actions, mysql] # add tag
+tags: [tech] # add tag
 ---
 
 Github Actions provides a way to automate your software workflows. The most common usage I have come across is the CI and CD pipeline. Continuous Integration also includes unit tests and integration tests. Sometimes, we require dependent services temporarily to run integration tests, such as databases, caches and other dependencies. This is made easier with the usage of docker containers. As we know, every workflow run happens in an isolated environment called a "Runner". The Runner server can install a container of your choice and make it available through out the job. You can read about it in the official documentation [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idservices). The containers thus created are removed at the end of the job by the Runner. 
