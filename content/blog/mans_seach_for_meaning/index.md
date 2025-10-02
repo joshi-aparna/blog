@@ -4,7 +4,7 @@ date: 2021-08-06 00:00:00-05:30
 description: # Add post description (optional)
 img: ./mans_search_title.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [viktor frankl, review, book, non-fiction] # add tag
+tags: [book, non-fiction] # add tag
 memorydata: ./mans_search_quotes.json
 ---
 
