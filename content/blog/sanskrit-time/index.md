@@ -4,7 +4,7 @@ date: 2021-08-10 00:00:00-05:30
 description: # Add post description (optional)
 img: ./time.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [sanskrit, time] # add tag
+tags: [course, language] # add tag
 practicedata: ./time-practice.json
 ---
 
