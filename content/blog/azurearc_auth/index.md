@@ -1,6 +1,6 @@
 ---
 title: Authentication in Azure Arc-Enabled Servers
-date: 2025-10-2 00:00:00-05:30
+date: 2025-10-02 00:00:00-05:30
 description: # Add post description (optional)
 img: ./arc_auth.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
