@@ -32,6 +32,12 @@
 <li>Your app (or the <code class="language-text">Azure.Identity</code> library) reads the file, extracts the secret, and resends the request—this time with the secret in the <code class="language-text">Authorization</code> header.</li>
 <li>The Arc agent validates the secret and returns the access token.</li>
 </ol>
+<h3>Watch-outs</h3>
+<ol>
+<li>On Windows, you must be a member of the local Administrators group or the Hybrid Agent Extension Applications group.</li>
+<li>On Linux, you must be a member of the himds group.</li>
+<li>The time duration allowed between the initial request to the local arc token endpoint and the second request that includes the secret key in header is only 60 seconds.</li>
+</ol>
 <p>This mechanism ensures that only processes running on the machine (with access to the file system) can request tokens—adding a layer of local trust.</p>
 <hr>
 <h2>Why Should You Care?</h2>
