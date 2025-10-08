@@ -2,7 +2,7 @@
 title: Fetch K8 Job Result without Persistent Storage
 date: 2025-10-07 00:00:00-05:30
 description: # Add post description (optional)
-img: ./k8_job_result.png # Add image post (optional)
+img: ./k8job.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
