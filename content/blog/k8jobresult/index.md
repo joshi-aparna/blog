@@ -6,7 +6,6 @@ img: ./k8job.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
-# How to Publish Kubernetes Job Results Without Persistent Storage
 
 Kubernetes Jobs are great for one-off workloads — running tests, data processing, or batch scripts.  
 But they come with a catch: as soon as the Job finishes, the pod is terminated.  
