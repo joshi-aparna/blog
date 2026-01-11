@@ -1,6 +1,6 @@
 ---
 title: Grit
-date: 2026-01-005 00:00:00-05:30
+date: 2026-01-05 00:00:00-05:30
 description: # Add post description (optional)
 img: ./grit.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
