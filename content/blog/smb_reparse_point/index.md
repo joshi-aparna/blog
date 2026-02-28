@@ -1,5 +1,5 @@
 ---
-title: Working with SMB and Kubernetes on Windows
+title: Working with SMB and Containers on Windows
 date: 2026-02-28 00:00:00-05:30
 description: # Add post description (optional)
 img: ./smb_reparse.png # Add image post (optional)
