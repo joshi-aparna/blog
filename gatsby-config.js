@@ -14,16 +14,16 @@ module.exports = {
     },
     recommendations: {
       read: {
-        title: `Start With Why`,
-        link: `https://www.goodreads.com/book/show/7108725-start-with-why`
+        title: `Tiny Experiments`,
+        link: `https://www.goodreads.com/book/show/214268997-tiny-experiments`
       },
       listen: {
         title: ``,
         link: `https://www.amazingif.com/listen/how-to-negotiate-for-what-you-need/`,
       },
       watch: {
-        title: ``,
-        link: ``,
+        title: `Building pi in a World of Slop — Mario Zechner`,
+        link: `https://www.youtube.com/watch?v=RjfbvDXpFls`,
       }
     },
   },
