@@ -17,4 +17,11 @@ The book starts off with the promise to be contradict the traditional approach t
 5. Types of cognitive scripts: the Sequel, the Crowdpleaser, and the Epic.
 6. Chronos vs Kairos : The amount of time given to a task vs the meaningful moments that transcends time.
 7. Recognise your magic window. Identify what work gets done in that window. Keep it open and protect it from other mundane tasks.
-8. 
+8. Procrastination is a signal - from head, heart, or hand - is it the right thing to do, do you enjoy doing it, or do you have the skills to do it. (Food for thought: what was the reason for procrastinating physiotherapy in June, 2026)
+9. Introspection vs Meta-cognition : Noticing your thoughts vs awareness + analysis.
+10. Tool Plus, Minus, Next -> After a timebound experiment, write what went well, what did not go well, and what is the next step. Make this data driven -> includes emotional data.
+11. Disruptions in experiments are inevitable. First deal with the subjective experience (how you feel about it). Then deal with the objective experience (practical implications).
+12. Seek fellow explorers.
+13. Learn in public.
+14. Let go of legacy.
+15. 
