@@ -2,10 +2,10 @@
 title: Tiny Experiments
 date: 2026-06-27 00:00:00-05:30
 description: # Add post description (optional)
-img: ./atomic_habits.png # Add image post (optional)
+img: ./tiny_experiments.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [book, non-fiction] # add tag
-memorydata: ./atomic_habits.json
+memorydata: ./tiny_experiments.json
 ---
 The book starts off with the promise to be contradict the traditional approach to goal setting and higher purpose in life. But, what I found is that the book ultimately talks about the same things but tries to make it more accessible to people who get intimidated by the largeness of these concepts. 
 
