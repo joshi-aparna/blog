@@ -119,8 +119,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `flexible-gatsby-starter`,
-        short_name: `flexible-gatsby`,
+        name: `aparna's-personal-space`,
+        short_name: `aparna's-space`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
