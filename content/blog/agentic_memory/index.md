@@ -2,7 +2,7 @@
 title: Agentic Memory - Mem0, MemGPT, A-Mem
 date: 2026-09-20 00:00:00-05:30
 description: # Add post description (optional)
-img: ./agent_memory.png # Add image post (optional)
+img: ./agentic_memory.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
