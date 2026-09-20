@@ -13,7 +13,7 @@ tags: [tech] # add tag
 
 Mem0 uses a dedicated middleware layer to manage memory before and after an LLM call.
 
-The memory layer could be deterministic or not. It can potentially incorporate different types of memory, such as sensory, session, user, and agentic memory.
+The memory layer could be deterministic or not. It can potentially incorporate different types of memory, such as conversational, session, user, and agentic memory.
 
 The memory layer is pluggable and can be used with any agent.
 
@@ -25,13 +25,13 @@ As the context window fills up, older messages in the session are truncated from
 
 However, facts from previous conversations are not necessarily lost. At every turn, the memory management layer extracts relevant facts and persists them in a database.
 
-The exact conversation itself is not persisted.
+The exact conversation itself is not persisted (unless infer=False).
 
 ### Episodic memory
 
-Episodic memory is scoped at the `session_id` level.
+Episodic memory is scoped at the `run_id` level.
 
-The extraction pipeline extracts metadata such as timestamps and graph snapshots. Once a session ends, everything is consolidated again.
+The extraction pipeline extracts metadata such as timestamps and graph snapshots.
 
 ### Semantic memory
 
@@ -107,7 +107,7 @@ A-mem is inspired by note-taking methods such as **Zettelkasten**, where notes f
 
 Every fact is atomic and can be connected to other facts.
 
-Every memory starts as either an episodic memory or an atomic memory.
+Every memory an atomic memory.
 
 The immediate next step is to enrich the text with a structured schema so that it becomes a better base for semantic memory.
 
@@ -144,6 +144,16 @@ One way I see the difference between Mem0 and A-mem:
 - Stores atomic notes and relationships between them.
 - It does not use the same explicit entity-extraction structure as Mem0.
 
+
+|                   | Mem0                                          | A-MEM                                  |
+| ----------------- | --------------------------------------------- | -------------------------------------- |
+| Basic unit        | Memory/fact                                   | Note                                   |
+| Organization      | Retrieval-oriented memory store               | Interconnected memory network          |
+| Linking           | Entity-aware relationships / graph mechanisms | Similarity-based note links            |
+| Evolution         | Extract/update/deduplicate memories           | New memories can modify existing notes |
+| Memory management | Dedicated memory layer                        | Agentic memory construction            |
+| Core idea         | **Remember useful facts**                     | **Build an evolving network of notes** |
+
 ---
 
 ## Mem0 vs MemGPT vs A-mem
@@ -168,7 +178,7 @@ One way to think about the evolution is:
       ↓
     Memory as interconnected atomic notes
       ↓
-    Memories evolve by creating and updating relationships
+    New memories create links and evolve existing notes
 ```
 The interesting progression is that memory moves from being primarily a **storage hierarchy** toward becoming an **active, evolving knowledge structure**.
 
