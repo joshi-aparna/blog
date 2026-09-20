@@ -2,7 +2,7 @@
 title: Agentic Memory - Mem0, MemGPT, A-Mem
 date: 2026-10-20 00:00:00-05:30
 description: # Add post description (optional)
-img: ./agent_memery.png # Add image post (optional)
+img: ./agent_memory.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
@@ -171,3 +171,6 @@ One way to think about the evolution is:
     Memories evolve by creating and updating relationships
 ```
 The interesting progression is that memory moves from being primarily a **storage hierarchy** toward becoming an **active, evolving knowledge structure**.
+
+<img width="1312" height="1199" alt="image" src="https://github.com/user-attachments/assets/535789e1-1954-4b67-bfbb-5c5acb292dd6" />
+
