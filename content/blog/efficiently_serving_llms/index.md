@@ -1,13 +1,12 @@
 ---
 title: Notes from Efficiently Serving LLMs
 date: 2026-09-26 00:00:00-05:30
-description: DeepLearning.io # Add post description (optional)
+description: # Add post description (optional)
 img: ./efficiently_serving_llms.png # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [tech] # add tag
 ---
 
-# Notes from Efficiently Serving LLMs
 Course: Efficiently Serving LLMs
 Platform: DeepLearning.io
 
