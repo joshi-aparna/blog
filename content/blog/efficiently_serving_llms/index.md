@@ -30,6 +30,40 @@ Platform: DeepLearning.io
 
    *The K-V cache contains the values that have already been computed and can be reused for subsequent tokens.*
 
+```
+                    Attention computation
+                         +-----------+
+                         |     A     |
+                         +-----+-----+
+                               |
+              +----------------+----------------+
+              |                                 |
+              v                                 v
+        New input token                    Cached K-V
+          +---------+                 +-----------------+
+          |   new   |                 | K1 K2 K3 ...   |
+          +---------+                 | V1 V2 V3 ...   |
+                                      +-----------------+
+              |                              |
+              +--------------+---------------+
+                             |
+                             v
+                        Next token
+                             |
+                             v
+                           New K,V
+                             |
+                             v
+                 +---------------------+
+                 |     Updated K-V     |
+                 |                     |
+                 | K1 K2 K3 ... Kn     |
+                 | V1 V2 V3 ... Vn     |
+                 +---------------------+
+                             |
+                             +----> cache for next step
+```
+
 ### Prefill and Decode
 
 7. **Prefill phase** — process the entire input prompt and build the initial KV cache. The output is used to generate the first token. (slowest)
@@ -46,19 +80,19 @@ Platform: DeepLearning.io
 
    For example:
 
-   \`\`\`
+   ```
    [The] [cat] [sat]
    [The] [home] [on] [the]
    [A]   [boy]
-   \`\`\`
+   ```
 
    After padding:
 
-   \`\`\`
+   ```
    [PAD] [PAD] [The] [cat] [sat]
    [PAD] [The] [home] [on] [the]
    [PAD] [PAD] [PAD] [A] [boy]
-   \`\`\`
+   ```
 
    The model can then generate the next token for each sequence.
 
