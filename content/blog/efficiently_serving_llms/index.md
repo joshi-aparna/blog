@@ -68,5 +68,6 @@ Platform: DeepLearning.io
 
 10. If you do this efficiently for every loop to see if a sequence is ready to be removed from the batch or a new one can be added, that's continuous batching. This can improve throughput.
 
-<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/345ca30e-1a8c-4819-82c2-658a4c71efa6" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/a9c784df-f406-43f0-87c8-089dfdc9d151" />
+
 
