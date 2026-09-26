@@ -34,6 +34,37 @@ Platform: DeepLearning.io</p>
 <p><em>The K-V cache contains the values that have already been computed and can be reused for subsequent tokens.</em></p>
 </li>
 </ol>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">                    Attention computation
+                         +-----------+
+                         |     A     |
+                         +-----+-----+
+                               |
+              +----------------+----------------+
+              |                                 |
+              v                                 v
+        New input token                    Cached K-V
+          +---------+                 +-----------------+
+          |   new   |                 | K1 K2 K3 ...   |
+          +---------+                 | V1 V2 V3 ...   |
+                                      +-----------------+
+              |                              |
+              +--------------+---------------+
+                             |
+                             v
+                        Next token
+                             |
+                             v
+                           New K,V
+                             |
+                             v
+                 +---------------------+
+                 |     Updated K-V     |
+                 |                     |
+                 | K1 K2 K3 ... Kn     |
+                 | V1 V2 V3 ... Vn     |
+                 +---------------------+
+                             |
+                             +----&gt; cache for next step</code></pre></div>
 <h3>Prefill and Decode</h3>
 <ol start="7">
 <li>
@@ -48,17 +79,13 @@ Platform: DeepLearning.io</p>
 <p><strong>Batching:</strong> Parallelly process N sequences of tokens.</p>
 <p>If the number of tokens in each sequence is different, use padding tokens on the left and set the attention mask value to `0`, so that the model does not pay attention to it.</p>
 <p>For example:</p>
-<p>```
-[The] [cat] [sat]
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[The] [cat] [sat]
 [The] [home] [on] [the]
-[A]   [boy]
-```</p>
+[A]   [boy]</code></pre></div>
 <p>After padding:</p>
-<p>```
-[PAD] [PAD] [The] [cat] [sat]
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[PAD] [PAD] [The] [cat] [sat]
 [PAD] [The] [home] [on] [the]
-[PAD] [PAD] [PAD] [A] [boy]
-```</p>
+[PAD] [PAD] [PAD] [A] [boy]</code></pre></div>
 <p>The model can then generate the next token for each sequence.</p>
 </li>
 <li>
