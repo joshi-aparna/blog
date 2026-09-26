@@ -40,28 +40,40 @@ Platform: DeepLearning.io
               |                                 |
               v                                 v
         New input token                    Cached K-V
-          +---------+                 +-----------------+
-          |   new   |                 | K1 K2 K3 ...   |
-          +---------+                 | V1 V2 V3 ...   |
-                                      +-----------------+
-              |                              |
-              +--------------+---------------+
-                             |
-                             v
-                        Next token
-                             |
-                             v
-                           New K,V
-                             |
-                             v
+              |                         +-----------------+
+              v                         | K1 K2 K3 ...   |
+        +-----------+                   | V1 V2 V3 ...   |
+        |  Q, K, V  |                   +-----------------+
+        | for token |                          |
+        +-----------+                          |
+              |                                 |
+              +----------------+----------------+
+                               |
+                               v
+                         Attention uses:
+                         Q(new) with
+                         K1...Kn + K(new)
+                         V1...Vn + V(new)
+                               |
+                               v
+                       Next-token logits
+                               |
+                               v
+                         Next token
+                               |
+                               |
+                               +------------------+
+                                                  |
+                           K(new), V(new)         |
+                                                  v
+                 +---------------------+      +-------+
+                 |     Updated K-V     | <----| Append|
+                 |                     |      +-------+
+                 | K1 K2 K3 ... Kn+1  |
+                 | V1 V2 V3 ... Vn+1  |
                  +---------------------+
-                 |     Updated K-V     |
-                 |                     |
-                 | K1 K2 K3 ... Kn     |
-                 | V1 V2 V3 ... Vn     |
-                 +---------------------+
-                             |
-                             +----> cache for next step
+                              |
+                              +----> cache for next step
 ```
 
 ### Prefill and Decode
